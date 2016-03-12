@@ -3,6 +3,7 @@ int countSubstrPattern(char *original, char *pattern);
 int isValidString(char *str1, char *str2);
 int getSkew(char *str, int n);
 int getMaxSkewN(char *str, int n);
+int getMinSkewN(char *str, int n);
 
 int getHammingDistance(char *str1, char *str2){							// This function gets the hamming distance of 2 strings.
 	int i = 0;
@@ -192,5 +193,22 @@ int getMaxSkewN(char *str, int n){										// This function gets the maximum sk
 	}
 	printf("MAX SKEW: %i\n", maxSkew);
 	return maxSkew;
+
+}
+
+int getMinSkewN(char *str, int n){										// This function gets the minimum skew with a input range.
+	int i = 0;
+	int minSkew = 100000;
+	int j = 0;
+	
+	for(i = 1; i < n+1; i++){										// This loop utilizes the former function (getSkew()).
+		j = getSkew(str, i);
+		
+		if (j < minSkew){											// Updates when there is a skew less than present value of minSkew.
+			minSkew = j;
+		}		
+	}
+	printf("MIN SKEW: %i\n", minSkew);
+	return minSkew;
 
 }
