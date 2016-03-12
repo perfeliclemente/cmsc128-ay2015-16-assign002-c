@@ -178,15 +178,15 @@ int getSkew(char *str, int n){										// This function gets the skew of a stri
 	}	
 }
 
-int getMaxSkewN(char *str, int n){										
+int getMaxSkewN(char *str, int n){										// This function gets the maximum skew with a input range.
 	int i = 0;
 	int maxSkew = 0;
 	int j = 0;
 	
-	for(i = 1; i < n+1; i++){										
+	for(i = 1; i < n+1; i++){										// This loop utilizes the former function (getSkew()).
 		j = getSkew(str, i);
 		
-		if (j > maxSkew){											
+		if (j > maxSkew){											// Updates when there is a skew more than present value of maxSkew.
 			maxSkew = j;
 		}		
 	}
