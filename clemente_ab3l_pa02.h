@@ -146,14 +146,14 @@ int isValidString(char *str, char *alphabet){							// This function checks if a
 	
 }
 
-int getSkew(char *str, int n){										
+int getSkew(char *str, int n){										// This function gets the skew of a string based on n.
 	int i = 0;
 	int skew = 0;
 	int strLen = strlen(str);
 	
 	
 	if ((strLen > 0) && strLen >= n){				
-		for (i = 0; i <= n-1; i++){									
+		for (i = 0; i <= n-1; i++){									// This loop traverses the string to checks if there are G's (skew++), and C's (skew--).
 			if (str[i] == 'G'){
 				skew++;
 			}
@@ -164,7 +164,7 @@ int getSkew(char *str, int n){
 		printf("Skew in %i: %i\n", n, skew);
 		return skew;
 	
-	}else {														
+	}else {														// These are conditions met.
 		if(strLen <= 0){
 			printf("Invalid String.\n");
 			return -1;
