@@ -111,7 +111,37 @@ int isValidString(char *str, char *alphabet){
 	}
 	
 	acc = 0;
-
+	
+	if (flag == 0){											
+		
+		for (i = 0; i < strLen; i++){									
+			for (j = 0; j < strLen; j++){							
+				if(str[i] == alphabet[j]){
+					acc++;
+				}	
+			}
+			
+			if (acc > 0){
+				validFlag = 1;
+			}else {
+				validFlag = 0;
+			}
+			
+			acc = 0;
+		}
+	
+	
+		if (validFlag == 0){								
+			printf("Invalid!\n");
+			return -1;
+		}else {
+			printf("Valid!\n");
+			return 1;
+		}
+		
+	}else{
+		printf("Invalid Alphabet!\n");
+	}
 	
 	
 }
