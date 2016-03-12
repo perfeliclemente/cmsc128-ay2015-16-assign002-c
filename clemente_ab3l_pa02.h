@@ -87,7 +87,7 @@ int countSubstrPattern(char *original, char *pattern){						// This function cou
 	}	
 }
 
-int isValidString(char *str, char *alphabet){							
+int isValidString(char *str, char *alphabet){							// This function checks if a string is valid based on the alphabet given.
 	int i = 0;
 	int j = 0;
 	int acc = 0;
@@ -97,7 +97,7 @@ int isValidString(char *str, char *alphabet){
 	int flag = 0;
 	int validFlag = 0;
 	
-	for (i = 0; i < alphabetLen; i++){									
+	for (i = 0; i < alphabetLen; i++){									// This loop checks if the alphabet consists of unique characters.
 		for (j = 0; j < alphabetLen; j++){
 			if(alphabet[i] == alphabet[j]){
 				acc++;
@@ -112,10 +112,10 @@ int isValidString(char *str, char *alphabet){
 	
 	acc = 0;
 	
-	if (flag == 0){											
+	if (flag == 0){												// Checks if alphabet is valid.
 		
-		for (i = 0; i < strLen; i++){									
-			for (j = 0; j < strLen; j++){							
+		for (i = 0; i < strLen; i++){									// This loop checks if all the characters in the input string is present in the alphabet.
+			for (j = 0; j < strLen; j++){								// This loop traverses through the alphabet for checking the presence of sppecific character from string.
 				if(str[i] == alphabet[j]){
 					acc++;
 				}	
@@ -131,7 +131,7 @@ int isValidString(char *str, char *alphabet){
 		}
 	
 	
-		if (validFlag == 0){								
+		if (validFlag == 0){										// These are conditions met.
 			printf("Invalid!\n");
 			return -1;
 		}else {
