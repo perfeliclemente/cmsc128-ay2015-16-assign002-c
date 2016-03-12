@@ -1,5 +1,6 @@
 int getHammingDistance(char *str1, char *str2);
 int countSubstrPattern(char *original, char *pattern);
+int isValidString(char *str1, char *str2);
 
 
 int getHammingDistance(char *str1, char *str2){							// This function gets the hamming distance of 2 strings.
@@ -84,4 +85,33 @@ int countSubstrPattern(char *original, char *pattern){						// This function cou
 			return 0;
 		}
 	}	
+}
+
+int isValidString(char *str, char *alphabet){							
+	int i = 0;
+	int j = 0;
+	int acc = 0;
+	
+	int strLen  = strlen(str);
+	int alphabetLen = strlen(alphabet);
+	int flag = 0;
+	int validFlag = 0;
+	
+	for (i = 0; i < alphabetLen; i++){									
+		for (j = 0; j < alphabetLen; j++){
+			if(alphabet[i] == alphabet[j]){
+				acc++;
+			}
+			
+		}
+		if (acc > 1){
+			flag = 1;
+		}
+		acc = 0;
+	}
+	
+	acc = 0;
+
+	
+	
 }
