@@ -1,7 +1,7 @@
 int getHammingDistance(char *str1, char *str2);
 int countSubstrPattern(char *original, char *pattern);
 int isValidString(char *str1, char *str2);
-
+int getSkew(char *str, int n);
 
 int getHammingDistance(char *str1, char *str2){							// This function gets the hamming distance of 2 strings.
 	int i = 0;
@@ -144,4 +144,35 @@ int isValidString(char *str, char *alphabet){							// This function checks if a
 	}
 	
 	
+}
+
+int getSkew(char *str, int n){										
+	int i = 0;
+	int skew = 0;
+	int strLen = strlen(str);
+	
+	
+	if ((strLen > 0) && strLen >= n){				
+		for (i = 0; i <= n-1; i++){									
+			if (str[i] == 'G'){
+				skew++;
+			}
+			if (str[i] == 'C'){
+				skew--;
+			}
+		}
+		printf("Skew in %i: %i\n", n, skew);
+		return skew;
+	
+	}else {														
+		if(strLen <= 0){
+			printf("Invalid String.\n");
+			return -1;
+		}
+		
+		if (strLen < n){
+			printf("Invalid n.\n");
+			return -1;
+		}
+	}	
 }
