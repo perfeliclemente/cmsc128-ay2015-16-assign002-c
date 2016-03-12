@@ -38,7 +38,7 @@ int getHammingDistance(char *str1, char *str2){							// This function gets the 
 }
 
 
-int countSubstrPattern(char *original, char *pattern){						
+int countSubstrPattern(char *original, char *pattern){						// This function counts the occurences of the string pattern from the original string.
 	int i = 0;
 	int j = 0;
 	int flag = 0;
@@ -46,10 +46,10 @@ int countSubstrPattern(char *original, char *pattern){
 	int originalLen = strlen(original);
 	int patternLen = strlen(pattern);
 	
-	if ((originalLen > 0) && (patternLen > 0) && originalLen >= patternLen){	
-		for(i = 0; i < originalLen; i++){								
+	if ((originalLen > 0) && (patternLen > 0) && originalLen >= patternLen){	// This checks of the conditions are met for the function to process the inputs.
+		for(i = 0; i < originalLen; i++){								// This loop traverses through the original string.
 			
-			for (j = 0;j < patternLen; j++){							
+			for (j = 0;j < patternLen; j++){							// This loop traverses through the string pattern and checks if the pattern is a substring of the original
 			
 				if (original[i+j] != pattern[j]){
 					flag = 1;
@@ -57,7 +57,7 @@ int countSubstrPattern(char *original, char *pattern){
 			
 			}
 			
-			if (flag == 0){										
+			if (flag == 0){										// Flag for having substring.
 				acc++;
 			}else {
 				flag = 0;
@@ -67,7 +67,7 @@ int countSubstrPattern(char *original, char *pattern){
 		printf("Count: %i\n", acc);
 		return acc;
 			
-	}else{														
+	}else{														// These are manifestations that the inputs may be valid.
 		
 		if (originalLen <= 0){
 			printf("Original str is invalid!\n");
